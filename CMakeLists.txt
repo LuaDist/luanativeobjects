@@ -5,10 +5,11 @@
 # Please note that the package source code is licensed under its own license.
 
 project ( luanativeobjects NONE )
-cmake_minimum_required ( VERSION 2.6 )
-include ( dist.cmake )
+cmake_minimum_required ( VERSION 2.8 )
+include ( cmake/dist.cmake )
+include ( lua )
 
-install ( DIRECTORY native_objects DESTINATION ${INSTALL_LMOD} )
+install ( DIRECTORY native_objects DESTINATION ${INSTALL_LMOD} COMPONENT Runtime )
 install_data ( project_template )
 install_example ( examples/ )
 install_lua_module ( record record.lua )
